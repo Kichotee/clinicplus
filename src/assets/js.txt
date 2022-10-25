@@ -1,0 +1,90 @@
+// Global Variables
+let nextBtn = document.querySelector(".next-btn");
+let prevBtn = document.querySelector(".prev-btn");
+
+prevBtn.setAttribute("disabled", "");
+
+// Counter from MDN Closures article; https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+let count = (function() {
+  let privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+
+  return {
+    countUp: function() {
+      changeBy(1);
+    },
+    countDown: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };
+})();
+
+
+function moveTileRight() {
+  let tile = document.querySelectorAll(".box");
+  let listLength = tile.length - 1;
+
+  /* Increment count function */
+  count.countUp();
+
+  //console.log(listLength);
+
+  /* Set next index to the count value */
+  let nextIndex = count.value();
+
+  console.log(nextIndex);
+
+  /* If the next tile exists (is not undefined)
+   * insert tile in current place after it
+   */
+  if (tile[nextIndex] !== undefined) {
+    tile[nextIndex].after(tile[nextIndex - 1]);
+  }
+
+  /* Set next button to disabled if we are on the last image tile;
+   * set previous button to enabled
+   */
+  /*if (nextIndex === listLength) {
+    nextBtn.setAttribute("disabled", "");
+  } else {
+    prevBtn.removeAttribute("disabled");
+  }*/
+  let disableNextBtn = (nextIndex === listLength ? nextBtn.setAttribute("disabled", "") : prevBtn.removeAttribute("disabled"));
+}
+
+
+function moveTileLeft() {
+  let tile = document.querySelectorAll(".box");
+
+  /* Decrement count function */
+  count.countDown();
+
+  /* Set previous index to the count value */
+  let prevIndex = count.value();
+
+  console.log(prevIndex);
+
+  /* If the previous tile exists (is not undefined)
+   * insert tile in current place before it
+   */
+  if (tile[prevIndex] !== undefined) {
+    tile[prevIndex].before(tile[prevIndex + 1]);
+  }
+
+  /*if (prevIndex === 0) {
+    prevBtn.setAttribute("disabled", "");
+  } else {
+    nextBtn.removeAttribute("disabled");
+  }*/
+  let disablePrevBtn = (prevIndex === 0 ? prevBtn.setAttribute("disabled", "") : nextBtn.removeAttribute("disabled"));
+}
+
+
+// Event Listeners
+nextBtn.addEventListener("click", moveTileRight);
+prevBtn.addEventListener("click", moveTileLeft);

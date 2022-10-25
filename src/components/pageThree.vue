@@ -1,7 +1,17 @@
 <template>
 <div class="book-appointments">
     <h4>Book an appointment</h4>
+
     <transition-group tag="div" appear @before-enter='featureBeforeEnter' @enter='featureEnter' class="feature-card-box">
+        <span>
+            <div class="ds-circle">
+
+            </div>
+            <div class="ds2-circle">
+
+            </div>
+
+        </span>
         <div v-for="(item, index) in props" :key="item.id" class="card" :data-index='index'>
 
             <div class="circle-design">
@@ -45,6 +55,10 @@
 <script>
 import gsap from 'gsap'
 import scrollTrigger from 'gsap/ScrollTrigger.js'
+import {
+    onMounted
+} from "vue";
+
 export default {
     setup() {
 
@@ -61,9 +75,9 @@ export default {
                     scrollTrigger: {
                         trigger: el,
                         toggleActions: 'restart pause resume none',
-                        
+                        scrub: true
                     },
-                   
+
                     duration: 1,
                     x: 0,
                     opacity: 1,
@@ -73,39 +87,77 @@ export default {
                 }
 
             )
-            console.log(el);
+
         }
         const featureBeforeEnter = (el) => {
-            console.log('not entered');
+
             el.style.opacity = 0
             el.style.transform = 'translateY(-50px) rotate(90deg)'
         }
         const featureEnter = (el, done) => {
-            console.log(el, 'enter');
-            gsap.to(
+            let media = window.matchMedia(("max-width:468px"))
+            if (media.matches) {
+                el.style.opacity = 0
+                el.style.transform = 'translateX(-300px) rotate(45deg)'
+            }
+            let mm = gsap.matchMedia()
+           mm.add('(max-width:486px)', ()=>{
+             gsap.to(
                 el, {
                     scrollTrigger: {
                         target: el,
-                        toggleActions: "restart reset play none ",
-                        start:"center 50%",
-                        end:"63% 0%",
-                        // markers:true,
-                        scrub:6,
+                        toggleActions: "play reverse play none ",
+                        scrub: false,
+                        start: "40% 50%",
+                        end: "55% 70%",
+                        // markers:true
+
                     },
                     duration: 10,
-                    y: 0,
-                    rotation:0,
+                    x: 0,
+                    rotation: 0,
                     opacity: 1,
                     ease: 'elastic',
                     onComplete: done,
                     delay: el.dataset.index * 0.5,
                 }
             )
+           })
+            gsap.to(
+                el, {
+                    scrollTrigger: {
+                        target: el,
+                        toggleActions: "play reverse play none ",
+                        start: "39% 50%",
+                        end: "52% 75%",
+                        // markers:true
+
+
+                    },
+                    duration: 10,
+                    y: 0,
+                    rotation: 0,
+                    opacity: 1,
+                    // stagger:{amount:0.5,
+
+                    // },
+                    ease: 'elastic',
+                    onComplete: done,
+                    delay: el.dataset.index * 0.5,
+                }
+            )
+
         }
+
         gsap.from(document.getElementsByTagName('h4'), {
             duration: 1,
             y: 50
         })
+        // onMounted(()=>{
+        //   const  cards=document.getElementsByClassName('card')
+        //     console.log(cards.length,cards);
+        //  })
+
         return {
             doctorBeforeEnter,
             doctorEnter,
@@ -127,6 +179,10 @@ export default {
 </script>
 
 <style scoped>
+.book-appointments {
+    position: relative;
+}
+
 h4 {
     margin-bottom: 3rem;
     color: #121212;
@@ -135,11 +191,13 @@ h4 {
     line-height: 60px;
     letter-spacing: 0em;
     text-align: left;
+    z-index: 2;
 }
 
 .feature-card-box {
     display: flex;
     width: calc(374px *3.4);
+    position: relative;
     height: 70vh;
     width: ;
     display: flex;
@@ -163,8 +221,8 @@ h4 {
 }
 
 .circle-design {
-    height: 120px;
-    width: 120px;
+    height: 7.5rem;
+    width: 7.5rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -173,8 +231,8 @@ h4 {
 }
 
 .circle {
-    height: 65px;
-    width: 65px;
+    height: 4.063rem;
+    width: 4.063rem;
     background: #04514C;
     border-radius: 50%;
     position: absolute;
@@ -194,7 +252,7 @@ h4 {
     flex-basis: 95px;
     text-align: left;
     color: #6E6D6D;
-    font-size: 13.5px;
+    font-size: 0.9rem;
 }
 
 .card-header {
@@ -267,5 +325,87 @@ h4 {
     color: #fff;
     font-size: 1rem;
     cursor: pointer
+}
+
+.feature-card-box span .ds-circle {
+    height: 37.625rem;
+    width: 40.6875rem;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #04514C;
+    position: absolute;
+    transform: translate(-500px, 16px);
+    z-index: ;
+}
+
+.feature-card-box span .ds2-circle {
+    height: 32rem;
+    width: 28.188rem;
+    border-radius: 80%;
+    background: transparent;
+    border: 2px solid #04514C;
+    position: absolute;
+    left: 0;
+    transform: translate(-400px, 16px);
+    z-index: ;
+}
+
+@media screen and (max-width:486px) {
+    h4 {
+        margin-bottom: 1rem;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    h4:nth-of-type(2) {
+        margin: 1.25rem 0;
+    }
+
+    .feature-card-box {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        align-items: center;
+    }
+
+    .card {
+        width: 18.875rem;
+        height: 249px;
+    }
+
+    .doctor-card-box {
+        width: 100%;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: start;
+        height: auto;
+        row-gap: 30px;
+    }
+
+    .feature-card-box span .ds-circle {
+        height: 46.625rem;
+        width: 40.6875rem;
+        border-radius: 50%;
+        background: transparent;
+        border: 4px solid #04514C;
+        position: absolute;
+        transform: translate(-600px, -433px);
+        z-index: ;
+    }
+
+    .feature-card-box span .ds2-circle {
+        height: 43rem;
+        width: 28.188rem;
+        border-radius: 80%;
+        background: transparent;
+        border: 4px solid #04514C;
+        position: absolute;
+        left: 0;
+        transform: translate(-350px, -473px);
+        z-index: ;
+    }
 }
 </style>

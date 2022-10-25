@@ -2,20 +2,31 @@
 <div class="slideshow">
 
     <h4>What we do</h4>
-    <div class="circle-design">
+    <span>
+        <div class="green-circle">
 
-        <span class="green-circle"></span>
-        <span class="white-circle"></span>
-    </div>
-    <transition-group tag="div" appear="" @before-enter= 'beforeEnter' @enter='enter' class="card-box">
-        <div v-for="(item, index) in props" :key="item.id" :data-index='index' class="card"  >
-            <img :src="item.slideshowImages"  alt="">
-            <div class="card-text" >
+        </div>
+        <div class="white-circle">
+
+        </div>
+        <!-- <img :src="designProps[1].img" alt=""> -->
+        <!-- <img class="white-circle" :src="designProps[0].img" alt=""> -->
+    </span>
+
+    <transition-group tag="div" appear="" @before-enter='beforeEnter' @enter='enter' class="card-box">
+
+        <div class="circle-design">
+
+        </div>
+        <div v-for="(item, index)  in props" :key="item.id" :data-index='index' class="slide-card">
+            <img :src="item.img" alt="">
+            <div class="card-text">
                 <p> {{cardText}} </p>
             </div>
-            <div class="card-button" >
+            <div class="card-button">
                 <button>
                     <i>&#8649;</i>
+                    
                     See-more
                 </button>
             </div>
@@ -23,6 +34,7 @@
         </div>
 
     </transition-group>
+    <!-- <button @click="yes" class="moveButton">Move card</button> -->
 
 </div>
 </template>
@@ -30,23 +42,30 @@
 <script>
 import gsap from 'gsap'
 import scrollTrigger from 'gsap/ScrollTrigger'
+import {
+    onMounted
+} from "vue";
+
 export default {
 
     setup() {
         gsap.registerPlugin(scrollTrigger)
         const beforeEnter = (el) => {
-            console.log('not entered');
+
             el.style.opacity = 0
-            el.style.transform = 'translateY(-50px)'
+            el.style.transform = 'translateY(-10%)'
+            
         }
         const enter = (el, done) => {
-            console.log(el, 'enter');
-           gsap.to(
+            let mm = gsap.matchMedia()
+            gsap.to(
                 el, {
                     scrollTrigger: {
                         target: el,
-                        toggleActions: "restart reset reverse none ",
-                        
+                        toggleActions: "play reverse play none ",
+                        start: "18% 10%",
+                        end: "30% center",
+                        // markers: true,
                     },
                     duration: 3,
                     y: 0,
@@ -56,16 +75,47 @@ export default {
                     delay: el.dataset.index * 0.5,
                 }
             )
+            mm.add('(max-width:486px)', () => {
+                gsap.to(el, {
+                    scrollTrigger: {
+                        target: el,
+                        toggleActions: 'play reverse play none',
+                        
+                        start: '10% center',
+                        end: "40% center",
+                        markers: true
+                    },
+                    duration: 2,
+
+                    y: 0,
+                    opacity: 1,
+                    ease: 'elastic',
+                    onComplete: done,
+                    delay: el.dataset.index * 0.25,
+
+                })
+            })
+
         }
-        
-        
+
+        const yes = () => {
+
+        }
+
         return {
+            enter,
             beforeEnter,
-            enter
+            yes
+
         }
     },
+
     props: {
         props: {
+            type: Object,
+            required: true
+        },
+        designProps: {
             type: Object,
             required: true
         },
@@ -88,6 +138,7 @@ export default {
 .slideshow {
     /* height: 100vh; */
     overflow: none;
+    position: relative;
 
 }
 
@@ -107,15 +158,19 @@ h4 {
     flex-direction: row;
     z-index: 2;
     gap: 42px;
-    width: calc(324px *3.4);
-    overflow: hidden;
+    /* width: calc(244*4px); */
+    overflow-x: scroll;
+    overflow-y: hidden;
     position: relative;
-    
+    scroll-behavior: smooth;
 
-    /* border: solid; */
 }
 
-.card {
+.card-box::-webkit-scrollbar {
+    width: 0;
+}
+
+.slide-card {
     width: 244px;
     height: 372px;
     background: #FFFFFF;
@@ -125,16 +180,16 @@ h4 {
     margin-bottom: 3rem;
 }
 
-.card .card-text {
-    margin: 21px 0;
-    font-size: 0.8rem;
+.slide-card .card-text {
+    margin: 1.3rem 0;
+    font-size: 75%;
 }
 
-.card .card-button {
+.slide-card .card-button {
     overflow: hidden;
 }
 
-.card .card-button button {
+.slide-card .card-button button {
     position: absolute;
     width: 120px;
     height: 43px;
@@ -154,21 +209,124 @@ h4 {
     cursor: pointer
 }
 
-.card .card-button button i {
+.hidden-card {
+    display: none;
+}
+
+.visible-card {
+    display: none;
+}
+
+.slide-card .card-button button i {
     font-size: ;
 }
 
-.slideshow .card img {
+.slideshow .slide-card img {
     width: 244px;
-    height: 193px;
+    height: 60%;
     border-radius: 20px;
     /* margin-right: 45px; */
     object-fit: cover;
 
 }
 
-.slideshow .card img:first-of-type {
+.slideshow .slide-card img:first-of-type {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+span .green-circle {
+    height: 597px;
+    width: 651px;
+
+    background: #04514C;
+    ;
+    border-radius: 50%;
+    position: absolute;
+    right: -305px;
+    top: 45px;
+
+}
+
+span .white-circle {
+    height: 602px;
+    width: 651px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: -395px;
+    top: 120px;
+    border: 2px solid #04514C;
+
+}
+
+/* responsiveness */
+@media screen and (max-width:468px) {
+    h4 {
+        margin-bottom: 1rem;
+        color: #121212;
+        font-size: 1.75rem;
+        font-weight: 500;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .card-box {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        z-index: 2;
+        gap: 42px;
+        align-items: center;
+        overflow-y: hidden;
+
+    }
+
+    .slide-card {
+        width: 19rem;
+        height: 340px;
+        background: #FFFFFF;
+        border-radius: 20px;
+        gap: 1rem;
+        margin: 0;
+
+    }
+
+    .slideshow .slide-card img {
+        width: 19rem;
+        height: 60%;
+        border-radius: 20px;
+        object-fit: cover;
+
+    }
+
+    .slide-card .card-text {
+        margin: 1rem 0;
+        font-size: 90%;
+    }
+
+    span .green-circle {
+        height: 929px;
+        width: 551px;
+        background: #04514C;
+        border-radius: 70%;
+        position: absolute;
+        right: -335px;
+        top: 70px;
+
+    }
+
+    span .white-circle {
+        height: 929px;
+        width: 551px;
+        background: #fff;
+        border-radius: 50%;
+        position: absolute;
+        right: -425px;
+        top: 140px;
+        border: 2px solid #04514C;
+
+    }
+
 }
 </style>

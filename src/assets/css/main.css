@@ -12,3 +12,8 @@ ul{
 li{
     list-style-type: none;
 }
+@media screen and (max-width:486px) {
+    h4{
+        font-size: 1.2rem;
+    }
+}
