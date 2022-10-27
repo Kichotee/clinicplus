@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomePage.vue'
 import Signup from '../views/Signup.vue'
 import LoginForm from '../views/LoginForm.vue'
+import dashboard from '../views/dashboard.vue'
 
 const routes = [
   {
@@ -18,6 +19,14 @@ const routes = [
     path: '/LoginForm',
     name:'LoginForm',
     component: LoginForm,
+    meta:{
+      hideNavBar:true
+    }
+  },
+  {
+    path: '/dashboard',
+    name:'dashboard',
+    component: dashboard,
     meta:{
       hideNavBar:true
     }

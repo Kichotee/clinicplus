@@ -22,7 +22,7 @@
 
         <div class="right-column-box">
             <form class="signUpForm" action="">
-                             
+
                 <div class="input-3">
                     <label for="">Email</label>
                     <br>
@@ -33,15 +33,19 @@
                     <br>
                     <input type="password" name="" id="">
                 </div>
-                <button type="submit"> Sign-up</button>
-                <small>Already have an account</small>
+                <router-link to="/dashboard">
+                    <button type="submit"> Sign-up</button>
+                </router-link>
+
+                <small>Create new account</small>
             </form>
-            
+
         </div>
-        
+
     </div>
 
 </div>
+<router-view></router-view>
 </template>
 
 <script>
@@ -96,7 +100,6 @@ export default {
     align-self: end;
     width: 61%;
     overflow: hidden;
-
 
 }
 
@@ -175,17 +178,19 @@ button {
     width: 95%;
     border-radius: 7.5px;
 }
-
+a{
+     width: 100%;
+}
 span .ds-circle {
     height: 37.625rem;
     width: 40.6875rem;
     border-radius: 50%;
-  background: #04514C;
+    background: #04514C;
     border: 2px solid #04514C;
     position: absolute;
     right: -70%;
     top: 0;
-    
+
     z-index: 1;
 }
 
@@ -198,7 +203,7 @@ span .ds2-circle {
     position: absolute;
     right: -70%;
     top: 0;
-    z-index:3 ;
+    z-index: 3;
 
 }
 </style>

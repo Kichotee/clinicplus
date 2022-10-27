@@ -1,7 +1,7 @@
 <template>
 <div class="home">
 
-    <nav v-if="![`LoginForm`, `Signup`].includes($route.name)">
+    <nav v-if="![`LoginForm`, `Signup`,`dashboard`].includes($route.name)">
 
         <div class="navlinks">
             <router-link to="/">
@@ -29,7 +29,7 @@
 
     </nav>
      
-    <div v-if="activeMenu && ![`LoginForm`, `Signup`].includes($route.name)" class="navlinks-mobile">
+    <div v-if="activeMenu && ![`LoginForm`, `Signup`,`dasjboard`].includes($route.name)" class="navlinks-mobile">
         <ul>
             <li v-for="item in navElements">
                 <p>{{item.element}}</p>
@@ -48,7 +48,7 @@
 </div>
 
 <router-view></router-view>
-<Footer v-if="![`LoginForm`, `Signup`].includes($route.name)"/>
+<Footer v-if="![`LoginForm`, `Signup`,`dashboard`].includes($route.name)"/>
 </template>
 
 <script>

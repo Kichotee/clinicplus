@@ -42,8 +42,11 @@
                     <br>
                     <input type="password" name="" id="">
                 </div>
-                <button type="submit"> Sign-up</button>
-                <small>Already have an account</small>
+                <router-link to="/dashboard">
+                     <button type="submit"> Sign-up</button>
+                </router-link>
+               
+                <small>Already have an account?</small>
             </form>
             
         </div>
@@ -59,6 +62,7 @@
     </div>
 
 </div>
+<router-view></router-view>
 </template>
 
 <script>
@@ -184,7 +188,9 @@ input:focus {
     outline: none;
     border: 1px solid #04514C;
 }
-
+a{
+     width: 100%;
+}
 button {
 
     width: 95%;
