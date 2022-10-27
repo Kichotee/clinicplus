@@ -83,7 +83,7 @@ export default {
                         
                         start: '10% center',
                         end: "40% center",
-                        markers: true
+                        // markers: true
                     },
                     duration: 2,
 

@@ -55,6 +55,7 @@
                     <div class="date-box">
                         <p>{{Month}}</p>
 
+
                         <p>{{day-2}}</p>
                     </div>
                     <hr>
