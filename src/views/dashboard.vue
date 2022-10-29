@@ -361,14 +361,14 @@ section {
     width: 100%;
     box-shadow: 0px 4px 4px 0px #00000040;
 }
-@media screen and (max-width:468px) {
+@media screen and (max-width:600px) {
     .screen-size-error{
         display: block;
         font-size: 2.5rem;
         color: #041542;
         height: 50vh;
         margin: 25vh 0;
-        padding: auto 0;
+        padding: 15vh 0;
        
     }
     .container{
