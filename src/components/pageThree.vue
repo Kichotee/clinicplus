@@ -350,7 +350,69 @@ h4 {
     z-index: ;
 }
 
-@media screen and (max-width:486px) {
+@media only screen and (max-width:486px) {
+    h4 {
+        margin-bottom: 1rem;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    h4:nth-of-type(2) {
+        margin: 1.25rem 0;
+    }
+
+    .feature-card-box {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        align-items: center;
+    }
+
+    .card {
+        width: 18.875rem;
+        height: 249px;
+    }
+
+    .doctor-card-box {
+        width: 100%;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: start;
+        height: auto;
+        row-gap: 30px;
+    }
+
+    .feature-card-box span .ds-circle {
+        height: 46.625rem;
+        width: 40.6875rem;
+        border-radius: 50%;
+        background: transparent;
+        border: 4px solid #04514C;
+        position: absolute;
+        transform: translate(-600px, -433px);
+        z-index: ;
+    }
+
+    .feature-card-box span .ds2-circle {
+        height: 43rem;
+        width: 28.188rem;
+        border-radius: 80%;
+        background: transparent;
+        border: 4px solid #04514C;
+        position: absolute;
+        left: 0;
+        transform: translate(-350px, -473px);
+        z-index: ;
+    }
+}
+@media only screen and (max-width:377px) {
+    .book-appointments {
+ margin-top: 1rem;
+ 
+}
     h4 {
         margin-bottom: 1rem;
         text-align: center;

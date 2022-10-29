@@ -172,6 +172,52 @@ button {
     }
 
     .top-page .img-content img {
+        display: none;
+    }
+
+    button {
+        width: 100%;
+    }
+     .top-page .text-content{
+        margin: 2rem 0 0;
+     }
+    .top-page .text-content h2{
+        font-size: 2rem;
+        padding: 0;
+        margin:0;
+        line-height: 3rem;
+
+    }
+
+    .top-page .text-content p {
+        font-weight: 400;
+        font-size: 1rem;
+        color: #6E6D6D;
+        margin-top: 0.6rem;
+
+    }
+
+}
+@media only screen and (max-width:478px) {
+    .top-page{
+        height: 40vh;
+       
+    }
+    button{
+        margin: 1.75rem 0;
+    }
+}
+@media only screen and (max-width:380px) {
+    .top-page {
+        margin: 0;
+        padding: 0;
+        height: 50vh;
+        display: block;
+        margin-bottom: 10px;
+
+    }
+
+    .top-page .img-content img {
         width: 24.725rem;
         margin-top: 3rem;
         display: none;
@@ -181,7 +227,7 @@ button {
         width: 100%;
     }
      .top-page .text-content{
-        margin: 2rem 0 0;
+        margin: 1rem 0 0;
      }
     .top-page .text-content h2{
         font-size: 2rem;

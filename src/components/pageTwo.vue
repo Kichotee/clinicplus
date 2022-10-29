@@ -261,7 +261,10 @@ span .white-circle {
 }
 
 /* responsiveness */
-@media screen and (max-width:468px) {
+@media only screen and (max-width:468px) {
+    .slideshow {
+
+}
     h4 {
         margin-bottom: 1rem;
         color: #121212;
@@ -329,4 +332,5 @@ span .white-circle {
     }
 
 }
+
 </style>
