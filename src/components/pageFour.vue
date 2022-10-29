@@ -155,7 +155,7 @@ hr {
 
 }
 
-/* Media responsivenes */
+/* Media responsiveness */
 
 @media screen and (max-width:486px) {
 

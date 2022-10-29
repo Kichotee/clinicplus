@@ -36,8 +36,10 @@
                 <router-link to="/dashboard">
                     <button type="submit"> Sign-up</button>
                 </router-link>
-
-                <small>Create new account</small>
+                <router-link to="/Signup">
+                    <small>Create new account</small>
+                </router-link>
+                
             </form>
 
         </div>
@@ -58,11 +60,13 @@ export default {
 .signUpPage {
     padding: 24px 40px 0 74px;
     display: grid;
-    grid-template-columns: 0.8fr 1fr;
-    grid-template-rows: 0.4fr 1fr;
+    grid-template-columns: 0.6fr 1fr;
+    grid-template-rows: 0.15fr 1fr;
     text-align: left;
-    /* height: 100vh; */
+    height: 100vh;
+    /* border: solid; */
     overflow: hidden;
+    width: 100vw;
 }
 
 .left-column {
@@ -88,17 +92,13 @@ export default {
 
 }
 
-.right-column {
-    grid-row: 2;
-    overflow: hidden;
-
-}
+.right-column {}
 
 .form-header {
     grid-row: 1;
     grid-column: 2;
     align-self: end;
-    width: 61%;
+    width: 91%;
     overflow: hidden;
 
 }
@@ -112,39 +112,45 @@ export default {
 }
 
 .right-column {
-    width: 90%;
-    height: 90%;
-    justify-items: left;
+    grid-column: 2;
+    grid-row: 2;
+    overflow: hidden;
+    /* border: solid; */
+    width: 100%;
+    height: 100%;
+    justify-self: left;
     z-index: 79;
+    /*  */
 
 }
 
 .right-column-box {
-    width: 80%;
-    padding: 2.5% 5%;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-    height: 90%;
+    width: 85%;
+    margin: auto auto;
+    padding: 2.5% 2.5%;
+    box-shadow: 0px 1px 4px 0px #00000040;
+    height: 100%;
     text-align: left;
     display: flex;
     flex-direction: column;
     z-index: 79;
     /* border: solid; */
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 form {
     margin-top: 5%;
     width: 90%;
-    height: 90%;
+    margin: 0 auto;
+    height: 100%;
     display: flex;
+    justify-content: space-evenly;
     /* border: solid; */
     flex-direction: column;
-    align-items: start;
-    gap: 5%;
+    align-items: center;
+    gap: 2.5%;
     z-index: 76;
-    overflow: hidden;
-
 }
 
 form>div {
@@ -153,14 +159,15 @@ form>div {
 }
 
 label {
-    margin: 70px 0;
+    /* margin: 70px 0; */
     font-weight: bolder;
+    font-size: 0.8rem;
 
 }
 
 input {
     width: 95%;
-    height: 70%;
+    height: 100%;
     border-radius: 5px;
     outline: none;
     background: #fff;
@@ -173,37 +180,106 @@ input:focus {
     border: 1px solid #04514C;
 }
 
+a {
+    width: 100%;
+    align-self: center;
+}
+
+.login-text {
+display: inline;
+    width: 60%;
+    /* border: solid; */
+    color: #04514C;
+
+}
+
 button {
 
     width: 95%;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
     border-radius: 7.5px;
-}
-a{
-     width: 100%;
-}
-span .ds-circle {
-    height: 37.625rem;
-    width: 40.6875rem;
-    border-radius: 50%;
-    background: #04514C;
-    border: 2px solid #04514C;
-    position: absolute;
-    right: -70%;
-    top: 0;
 
-    z-index: 1;
 }
 
-span .ds2-circle {
-    height: 32rem;
-    width: 28.188rem;
-    border-radius: 80%;
+.signUpPage .log-in-button {
     background: #fff;
-    border: 2px solid #04514C;
-    position: absolute;
-    right: -70%;
-    top: 0;
-    z-index: 3;
+    border: 1px #04514C solid;
+    color: #04514C;
 
+}
+@media only screen and (max-width:486px) {
+    .signUpPage {
+        padding: 3rem 0 0 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .logo img {
+        width: 15%;
+        margin-left: 1rem;
+    }
+
+    .left-column {
+        display: none;
+    }
+
+    .form-header {
+        width: 100%;
+    }
+
+    .right-column {}
+    .right-column-box{
+        height: 50%;
+    }
+    form{
+        height: 100%;
+        gap: 5%;
+        
+    }
+    button{
+        background: #04514C;
+        color: #fff;
+    }
+}
+@media only screen and (max-width:376px) {
+    .signUpPage {
+        padding: 3rem 0 0 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .logo img {
+        width: 15%;
+        margin-left: 1rem;
+    }
+
+    .left-column {
+        display: none;
+    }
+    input{
+        height: 60%;
+    }
+
+    .form-header {
+        width: 100%;
+    }
+
+    .right-column {}
+    .right-column-box{
+        height:40%;
+    }
+    form{
+        height: 100%;
+        gap: 3.75%;
+    }
+    button{
+        background: #04514C;
+        color: #fff;
+    }
 }
 </style>

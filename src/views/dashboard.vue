@@ -1,5 +1,8 @@
 <template>
 <div class="dashboard-page">
+    <p class="screen-size-error">
+        View on Desktop only
+    </p>
     <div class="container">
         <aside>
             <img class="logo" src="../assets/clinicplus/logo.png" alt="">
@@ -54,7 +57,6 @@
                 <div class="dates"> 
                     <div class="date-box">
                         <p>{{Month}}</p>
-
 
                         <p>{{day-2}}</p>
                     </div>
@@ -152,6 +154,9 @@ export default {
 </script>
 
 <style scoped>
+.screen-size-error{
+    display: none;
+}
 .container {
     display: flex;
     height: 100vh;
@@ -355,5 +360,19 @@ section {
     height: 90%;
     width: 100%;
     box-shadow: 0px 4px 4px 0px #00000040;
+}
+@media screen and (max-width:468px) {
+    .screen-size-error{
+        display: block;
+        font-size: 2.5rem;
+        color: #041542;
+        height: 50vh;
+        margin: 25vh 0;
+        padding: auto 0;
+       
+    }
+    .container{
+        display: none;
+    }
 }
 </style>
