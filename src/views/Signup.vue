@@ -257,10 +257,12 @@ button {
 
     .right-column-box {
         height: 60%;
+        min-height: 60%;
     }
 
     form {
         height: 100%;
+        min-height: 100%;
         gap: 8%;
     }
 
@@ -294,16 +296,19 @@ button {
 
     .form-header {
         width: 100%;
+        
     }
 
     .right-column {}
 
     .right-column-box {
         height: 95%;
+        min-height: 95%;
     }
 
     form {
         height: 100%;
+        min-height: 100%;
         gap: 5%;
     }
 

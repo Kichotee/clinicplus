@@ -233,9 +233,11 @@ button {
     .right-column {}
     .right-column-box{
         height: 50%;
+        min-height: 50%;
     }
     form{
         height: 100%;
+        min-height: 100%;
         gap: 5%;
         
     }
@@ -272,9 +274,11 @@ button {
     .right-column {}
     .right-column-box{
         height:40%;
+        min-height: 40%;
     }
     form{
         height: 100%;
+        min-height: 100%;
         gap: 3.75%;
     }
     button{

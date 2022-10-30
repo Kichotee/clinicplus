@@ -109,7 +109,7 @@ export default {
                         toggleActions: "play reverse play none ",
                         scrub: false,
                         start: "40% 50%",
-                        end: "55% 70%",
+                        end: "55% 90%",
                         // markers:true
 
                     },

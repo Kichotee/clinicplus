@@ -28,14 +28,13 @@
         </div>
 
     </nav>
-     
+
     <div v-if="activeMenu && ![`LoginForm`, `Signup`,`dashboard`].includes($route.name)" class="navlinks-mobile">
         <ul>
             <li v-for="item in navElements">
                 <p>{{item.element}}</p>
             </li>
-        </ul>
-        <div class="register-box">
+             <div class="register-box">
             <router-link to="/LoginForm">
                 Login
             </router-link>
@@ -44,11 +43,13 @@
             </router-link>
 
         </div>
+        </ul>
+       
     </div>
 </div>
 
 <router-view></router-view>
-<Footer v-if="![`LoginForm`, `Signup`,`dashboard`].includes($route.name)"/>
+<Footer v-if="![`LoginForm`, `Signup`,`dashboard`].includes($route.name)" />
 </template>
 
 <script>
@@ -79,7 +80,7 @@ export default {
             logo: require('./assets/clinicplus/logo.png'),
         }
     },
-     methods: {
+    methods: {
         toggleMenu() {
             this.activeMenu = !this.activeMenu
         }
@@ -110,6 +111,7 @@ export default {
     border-bottom: 1px solid #2F845B;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 3;
+    color: #2c3e50;
 }
 
 .navlinks {
@@ -141,6 +143,7 @@ export default {
 .home nav ul li {
     margin: 0;
     padding: 0;
+    color: #2c3e50;
 }
 
 .home nav ul li p:hover {
@@ -162,7 +165,13 @@ export default {
     justify-content: space-between;
     align-items: center;
     justify-self: center;
+    color: #2c3e50;
 
+}
+
+.home nav .register-box a {
+    color: #2c3e50;
+    font-family: poppins;
 }
 
 button {
@@ -176,10 +185,12 @@ button {
     cursor: pointer;
 
 }
-.navlinks-mobile a{
+
+.navlinks-mobile a {
     color: #fff;
 }
-.navlinks-mobile a.router-exact-link-active{
+
+.navlinks-mobile a.router-exact-link-active {
     color: #fff;
 }
 
@@ -196,6 +207,7 @@ button {
     height: 30px;
 
 }
+
 @keyframes hover-pulse {
     50% {
         font-size: 1.2rem;
@@ -247,6 +259,10 @@ button {
         font-size: 0.9rem
     }
 
+    .home nav .register-box a {
+        color: #2c3e50;
+    }
+
     button {
         height: 1.75rem;
         width: 4.875rem;
@@ -270,7 +286,6 @@ button {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        padding: 0 1rem;
 
     }
 
@@ -303,18 +318,19 @@ button {
     .navlinks-mobile {
         display: block;
         width: 100%;
-        height: 20vh;
+        height: 25vh;
         background: #04514C;
         color: #ffff;
     }
 
     .navlinks-mobile ul {
-        height: 50%;
+        height: 80%;
         display: flex;
         flex-direction: column;
         width: 100%;
         text-align: left;
-        justify-content: space-around;
+        align-items: center;
+        justify-content: space-evenly;
         padding: 0 1.25rem;
 
     }
@@ -323,20 +339,20 @@ button {
         display: flex;
         width: 100%;
         flex-direction: column;
-        align-items: left;
+        align-items: center;
+        border: solid;
         text-align: left;
-        padding: 0 1.25rem;
         gap: 10px;
 
     }
 
     button {
         background-color: #f5f5f5;
-        width: 40%;
+        width: 100%;
         color: #04514C;
         font-size: 1.15rem;
         text-align: center;
-        align-self: right;
+        padding: 0.25rem 0.5rem;
 
     }
 

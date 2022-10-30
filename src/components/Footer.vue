@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 footer {
     margin-top: 3rem;
     height: 324px;
@@ -69,13 +69,13 @@ footer {
     font-size: 16px;
 
 }
-
 .footer-box {
     height: 100%;
 
     padding: 1rem 137px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr ;
+   
     color: #fff;
 }
 
