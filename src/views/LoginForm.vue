@@ -239,7 +239,7 @@ button {
         height: 100%;
         min-height: 100%;
          justify-content: center;
-        gap: 5%;
+        gap: 10%;
         
     }
     button{
