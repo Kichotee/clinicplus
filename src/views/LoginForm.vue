@@ -232,12 +232,13 @@ button {
 
     .right-column {}
     .right-column-box{
-        height: 50%;
-        min-height: 50%;
+        height: 389px;
+        min-height: 389px;
     }
     form{
         height: 100%;
         min-height: 100%;
+         justify-content: center;
         gap: 5%;
         
     }
@@ -273,13 +274,14 @@ button {
 
     .right-column {}
     .right-column-box{
-        height:40%;
-        min-height: 40%;
+        height:342px;
+        min-height: 342px;
     }
     form{
         height: 100%;
         min-height: 100%;
-        gap: 3.75%;
+         justify-content: center;
+        gap: 5%;
     }
     button{
         background: #04514C;

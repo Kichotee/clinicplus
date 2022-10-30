@@ -340,7 +340,6 @@ button {
         width: 100%;
         flex-direction: column;
         align-items: center;
-        border: solid;
         text-align: left;
         gap: 10px;
 

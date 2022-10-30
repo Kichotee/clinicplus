@@ -256,8 +256,8 @@ button {
     .right-column {}
 
     .right-column-box {
-        height: 60%;
-        min-height: 60%;
+        height: 466px;
+        min-height: 466px;
     }
 
     form {
@@ -302,13 +302,14 @@ button {
     .right-column {}
 
     .right-column-box {
-        height: 95%;
-        min-height: 95%;
+        height: 466px;
+        min-height: 466px;
     }
 
     form {
         height: 100%;
         min-height: 100%;
+        justify-content: center;
         gap: 5%;
     }
 
