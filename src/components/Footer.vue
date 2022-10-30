@@ -14,16 +14,16 @@
                 <header>Products</header>
                 <ul>
                     <li>
-                        home
+                        Home
                     </li>
                     <li>
-                        home
+                        About
                     </li>
                     <li>
-                        home
+                        Services
                     </li>
                     <li>
-                        home
+                        Contact
                     </li>
                 </ul>
             </div>
@@ -31,13 +31,13 @@
                 <header>Services</header>
                 <ul>
                     <li>
-                        home
+                        Appointment
                     </li>
                     <li>
-                        home
+                        NewsLetter
                     </li>
                     <li>
-                        home
+                        Healthcare
                     </li>
                     
                 </ul>
@@ -59,7 +59,7 @@ export default {
 footer {
     margin-top: 3rem;
     height: 324px;
-    width: 100vw;
+    width: 100%;
     background: #fff;
     border-top: 1px solid #ddd;
     background: #04514C;
@@ -138,9 +138,13 @@ header{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+
     
     
 
+}
+li{
+    font-size: 10px;
 }
 .box-2, .box-3{
     display: flex;
