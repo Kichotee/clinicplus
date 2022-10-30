@@ -29,7 +29,7 @@
 
     </nav>
      
-    <div v-if="activeMenu && ![`LoginForm`, `Signup`,`dasjboard`].includes($route.name)" class="navlinks-mobile">
+    <div v-if="activeMenu && ![`LoginForm`, `Signup`,`dashboard`].includes($route.name)" class="navlinks-mobile">
         <ul>
             <li v-for="item in navElements">
                 <p>{{item.element}}</p>
