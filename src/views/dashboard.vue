@@ -54,68 +54,184 @@
             </header>
 
             <div class="dashboard-body">
-                <div class="dates"> 
+                <div class="dates">
                     <div class="date-box">
                         <p>{{Month}}</p>
 
                         <p>{{day-2}}</p>
+
+                        <small>0 appointments</small>
                     </div>
                     <hr>
                     <div class="date-box">
                         <p>{{Month}}</p>
 
                         <p>{{day-1}}</p>
+
+                        <small>0 appointments</small>
                     </div>
                     <hr>
                     <div class="date-box">
-                       Today
+                        <p>Today</p>
+                        <small>2 appointments</small>
                     </div>
                     <hr>
                     <div class="date-box">
                         <p>{{Month}}</p>
 
                         <p>{{day+1}}</p>
+
+                        <small>0 appointments</small>
                     </div>
                     <hr>
-                      <div class="date-box">
+                    <div class="date-box">
                         <p>{{Month}}</p>
 
                         <p>{{day+2}}</p>
+
+                        <small>0 appointments</small>
                     </div>
-                    
-                    
+
                 </div>
                 <div class="vitals">
                     <div class="vital-signs">
-                        heart rate
-                        70bpm
+
+                        <p>heart rate</p>
+                        <img-box>
+                            <span></span>
+                            <img src="../assets/clinicplus/heart.png" alt="">
+                        </img-box>
+
+                        <small>70bpm</small>
                     </div>
                     <div class="vital-signs">
-                        heart rate
-                        70bpm
+                        <p>Blood Pressure</p>
+                        <img-box>
+                            <span></span>
+                            <img src="../assets/clinicplus/Blood.png" alt="">
+                        </img-box>
+
+                        <small>123/92mmHg</small>
                     </div>
                     <div class="vital-signs">
-                        heart rate
-                        70bpm
+                        <p>Sugar level</p>
+                        <img-box>
+                            <span></span>
+                            <img src="../assets/clinicplus/cells.png" alt="">
+                        </img-box>
+
+                        <small>5.2</small>
                     </div>
                     <div class="vital-signs">
-                        heart rate
-                        70bpm
+                        <p>SpO<sub>2</sub></p>
+                        <img-box>
+                            <span></span>
+                            <img src="../assets/clinicplus/lungs.png" alt="">
+                        </img-box>
+
+                        <small>98%</small>
                     </div>
 
                 </div>
-                 
 
                 <div class="appointments">
+
                     <img src="../assets/clinicplus/nurse.png" alt="">
-                       
 
                 </div>
                 <div class="medical-report">
+                    <div class="report">
+
+                        <ul>
+                            <p>Medical-reports</p>
+                            <li>
+                                <p class="parameter">Pcv</p>
+                                -
+                                <p class="value">41%</p>
+                            </li>
+                            <li>
+                                <p class="parameter">HGV</p>
+                                -
+                                <p class="value">Negative</p>
+                            </li>
+                            <li>
+                                <p class="parameter">Blood Group</p>
+                                -
+                                <p class="value">AB positive</p>
+                            </li>
+                            <li>
+                                <p class="parameter">Genotype</p>
+                                -
+                                <p class="value">AA</p>
+                            </li>
+                            <li>
+                                <p class="parameter">E.C.G</p>
+                                -
+                                <p class="value">Normal</p>
+                            </li>
+                            <li>
+                                <p class="parameter">Asthma</p>
+                                -
+                                <p class="value">Asthmatic</p>
+                            </li>
+                            <li>
+                                <p class="parameter">Asthma</p>
+                                -
+                                <p class="value">Asthmatic</p>
+                            </li>
+                            <li>
+                                <p class="parameter">Covid-19 Vaccine</p>
+                                -
+                                <p class="value">Vaccinated</p>
+                            </li>
+                            <li>
+                                <p class="parameter">Urine</p>
+                                -
+                                <p class="value">Normal</p>
+                            </li>
+                            <li>
+                                <p class="parameter">Asthma</p>
+                                -
+                                <p class="value">Asthmatic</p>
+                            </li>
+                            <li>
+                                <p class="parameter">Sputum</p>
+                                -
+                                <p class="value">Normal</p>
+                            </li>
+                        </ul>
+                    </div>
 
                 </div>
                 <div class="appointment-history">
+                    <header>
+                        Appointment History
+                    </header>
+                    <p>
+                        Doctor joel
 
+                        <small>optical surgeon</small>
+                    </p>
+                    <h5>
+                        December 21st,2022
+                    </h5>
+                    <p>
+                        Doctor joel
+
+                        <small>optical surgeon</small>
+                    </p>
+                    <h5>
+                        December 21st,2022
+                    </h5>
+                    <p>
+                        Doctor joel
+
+                        <small>optical surgeon</small>
+                    </p>
+                    <h5>
+                        December 21st,2022
+                    </h5>
+                        <a href="">View all</a>
                 </div>
             </div>
 
@@ -125,45 +241,54 @@
 </template>
 
 <script>
-import {ref  } from "vue";
+import {
+    ref
+} from "vue";
 export default {
-    setup(){
-        let months = ['Jan', 'Feb', 'Mar', 'Apr','May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    setup() {
+        let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         const m = new Date()
         let Month = ref(0)
         let day = ref(0)
-           Month= months[m.getMonth()]
-           day=m.getDate()
-       
-        return{
-            Month, day
+        Month = months[m.getMonth()]
+        day = m.getDate()
+
+        // dayColor = ()=>{
+        //     if (document.getElementsByTagName('p').content = 'Today'){
+        //         document.querySelector('.dates .date-box').style.color='green'
+        //     }
+        // }
+
+        return {
+            Month,
+            day,
+
         }
 
     },
-    data(){
-        return{
+    data() {
+        return {
             // Month:'',
             // day: null
         }
     },
-    Mounted(){
-        
-        
+    Mounted() {
+
     }
 }
 </script>
 
 <style scoped>
-.screen-size-error{
+.screen-size-error {
     display: none;
 }
+
 .container {
     display: flex;
     height: 100vh;
     overflow: hidden;
 
 }
-
 
 aside {
     width: 25%;
@@ -273,9 +398,10 @@ section {
     grid-template-columns: 1.75fr 1fr;
     grid-template-rows: 0.75fr 0.75fr 2.5fr;
 }
-.dates hr{
+
+.dates hr {
     background: #04514C;
-    color: #04514c ;
+    color: #04514c;
     height: 98%;
     padding: 1% 0;
 
@@ -285,7 +411,7 @@ section {
     grid-column: 0;
     grid-row: 0;
     background: #fff;
-    height: 90%;
+    height: 100%;
     width: 100%;
     border-radius: 25px;
     box-shadow: 0px 4px 4px 0px #00000040;
@@ -293,9 +419,23 @@ section {
     align-items: center;
 
 }
-.date-box{
-     width: 20%;
-    
+
+.date-box {
+    width: 20%;
+    ;
+
+}
+
+.date-box p {
+    display: inline;
+    margin: 0 2px;
+}
+
+.date-box small {
+    display: block;
+    font-size: 0.65rem;
+    align-self: end;
+    margin-top: 10px;
 }
 
 .vitals {
@@ -308,17 +448,67 @@ section {
 
 }
 
-.vitals img {
-    width: 30px;
-}
-
-.vitals .vital-signs {
+.vital-signs {
     height: 100%;
-    width: 20%;
+    width: 25%;
     background: #fff;
     box-shadow: 0px 4px 4px 0px #00000040;
     border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
+}
+
+.vital-signs p {
+    font-size: 0.65rem;
+}
+
+.vital-signs sub {
+    font-size: 00.5rem;
+    display: inline;
+}
+
+.vital-signs span {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #FF6DC64D;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.vital-signs:nth-of-type(2) span {
+    background-color: #FE0C0C4D;
+}
+
+.vital-signs:nth-of-type(3) span {
+    background-color: #2602FF4D;
+}
+
+.vital-signs:nth-of-type(4) span {
+    background: #FFCEB3;
+
+}
+
+.vital-signs small {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.vital-signs img {
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.vital-signs:nth-of-type(2) img {
+    width: 20px;
 }
 
 .appointments {
@@ -333,12 +523,13 @@ section {
     height: 100%;
     position: relative;
 }
+
 .appointments img {
     position: absolute;
-     width: 55%;
-     top: -12%;
-     right: 5%;
-   /* transform: translate(0,50%); */
+    width: 55%;
+    top: -12%;
+    right: 5%;
+    /* transform: translate(0,50%); */
     z-index: 5;
 }
 
@@ -347,9 +538,43 @@ section {
     grid-row: 3;
     background: #fff;
     border-radius: 25px;
-    height: 90%;
+    height: auto;
     width: 100%;
     box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.report {
+    height: 100%;
+}
+
+.report ul {
+    height: 90%;
+    margin: 1rem 0 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+
+}
+
+.report ul li {
+    height: 20%;
+    display: grid;
+    grid-template-columns: 0.75fr 0.25fr 0.5fr;
+    justify-items: start;
+    padding: 0 0 0 1rem;
+    font-size: 0.6rem;
+
+    /* border: solid; */
+
+}
+
+.report ul li .parameter {
+    grid-column: 1;
+}
+
+.report ul>p {
+    text-align: left;
+    padding: 0 0 0 1rem;
 }
 
 .appointment-history {
@@ -357,21 +582,63 @@ section {
     grid-row: 3;
     background: #fff;
     border-radius: 25px;
-    height: 90%;
+    height: 100%;
     width: 100%;
+    display: grid;
+    padding: 1rem 0 0 1rem;
+    grid-template: repeat(4, 1fr)/repeat(2, 1fr);
     box-shadow: 0px 4px 4px 0px #00000040;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
+
+.appointment-history header {
+    grid-column: 1/span 2;
+    text-align: left;
+
+}
+
+.appointment-history p {
+    grid-column: 1;
+    align-self: start;
+    text-align: left;
+
+}
+
+.appointment-history p small {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 300;
+}
+
+.appointment-history h5 {
+    grid-column: 2;
+    font-size: .65rem;
+    font-weight: 300;
+    align-self: center;
+    text-align: left;
+    width: 100%;
+    height: 68%;
+
+}
+.appointment-history a {
+    color: #041542;
+    font-size: 0.65rem;
+    grid-column: 2;
+}
+
 @media screen and (max-width:600px) {
-    .screen-size-error{
+    .screen-size-error {
         display: block;
         font-size: 2.5rem;
         color: #041542;
         height: 50vh;
         margin: 25vh 0;
         padding: 15vh 0;
-       
+
     }
-    .container{
+
+    .container {
         display: none;
     }
 }

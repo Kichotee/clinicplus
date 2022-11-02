@@ -1,4 +1,4 @@
-<template>
+ <template>
 <div class="book-appointments">
     <h4>Book an appointment</h4>
 
@@ -78,7 +78,7 @@ export default {
                         scrub: true
                     },
 
-                    duration: 1,
+            
                     x: 0,
                     opacity: 1,
                     ease: 'bounce',
