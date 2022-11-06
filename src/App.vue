@@ -26,7 +26,6 @@
                 <img src="./assets/clinicplus/menu.png" alt="">
             </div>
         </div>
-
     </nav>
 
     <div v-if="activeMenu && ![`LoginForm`, `Signup`,`dashboard`].includes($route.name)" class="navlinks-mobile">

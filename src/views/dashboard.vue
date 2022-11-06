@@ -120,7 +120,7 @@
                             <img src="../assets/clinicplus/cells.png" alt="">
                         </img-box>
 
-                        <small>5.2</small>
+                        <small>7.8 mmol/L</small>
                     </div>
                     <div class="vital-signs">
                         <p>SpO<sub>2</sub></p>
@@ -135,7 +135,18 @@
                 </div>
 
                 <div class="appointments">
-
+                    <div class="appointment-items">
+                        <div class="reminder-item">
+                            Reminder
+                            <i> bell</i>
+                        </div>
+                        <p>
+                            Hey! you have two appointments today
+                        </p>
+                        <button>
+                            view appointments
+                        </button>
+                    </div>
                     <img src="../assets/clinicplus/nurse.png" alt="">
 
                 </div>
@@ -231,7 +242,7 @@
                     <h5>
                         December 21st,2022
                     </h5>
-                        <a href="">View all</a>
+                    <a href="">View all</a>
                 </div>
             </div>
 
@@ -524,23 +535,39 @@ section {
     position: relative;
 }
 
+.appointment-items {
+    width: 52%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    text-align: left;
+    gap: 5%;
+    padding: 0 0 0 5%;
+
+}
+
+.appointment-items p {
+    max-height: 70px;
+
+    font-size: 0.7rem;
+    margin: 10% 0 10% 0;
+}
+
+.reminder-item {
+    margin-top: 10%;
+    font-weight: 700;
+    font-size: 0.8rem;
+
+}
+
+.appointment-items button {
+    width: 100%;
+}
+
 .appointments img {
     position: absolute;
     width: 55%;
-    top: -12%;
-    right: 5%;
-    /* transform: translate(0,50%); */
-    z-index: 5;
-}
-
-.medical-report {
-    grid-column: 1;
-    grid-row: 3;
-    background: #fff;
-    border-radius: 25px;
-    height: auto;
-    width: 100%;
-    box-shadow: 0px 4px 4px 0px #00000040;
+    top: -8%;
 }
 
 .report {
@@ -621,6 +648,7 @@ section {
     height: 68%;
 
 }
+
 .appointment-history a {
     color: #041542;
     font-size: 0.65rem;

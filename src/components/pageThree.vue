@@ -370,7 +370,7 @@ h4 {
     }
 
     .card {
-        width: 18.875rem;
+        width: 16.875rem;
         height: 249px;
     }
 
@@ -432,7 +432,7 @@ h4 {
     }
 
     .card {
-        width: 18.875rem;
+        width: 16.875rem;
         height: 249px;
     }
 

@@ -278,6 +278,7 @@ span .white-circle {
         display: flex;
         flex-direction: column;
         height: auto;
+        padding-bottom: 5%;
         z-index: 2;
         gap: 42px;
         align-items: center;
@@ -286,8 +287,8 @@ span .white-circle {
     }
 
     .slide-card {
-        width: 19rem;
-        height: 340px;
+        width: 17rem;
+        height: 20.25rem;
         background: #FFFFFF;
         border-radius: 20px;
         gap: 1rem;
@@ -296,7 +297,7 @@ span .white-circle {
     }
 
     .slideshow .slide-card img {
-        width: 19rem;
+        width: 100%;
         height: 60%;
         border-radius: 20px;
         object-fit: cover;
