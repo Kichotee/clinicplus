@@ -287,7 +287,7 @@ span .white-circle {
     }
 
     .slide-card {
-        width: 17rem;
+        width: 19rem;
         height: 20.25rem;
         background: #FFFFFF;
         border-radius: 20px;
