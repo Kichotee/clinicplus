@@ -79,7 +79,7 @@ section {
 .testimonials {
     width: 94%;
 
-    height: 376px;
+    height: max-content !important;
     margin: 0 40px 1rem 0;
     padding-bottom: 0.5rem;
     box-shadow: 0px 4px 4px 0px #00000040;
@@ -95,6 +95,7 @@ section {
     position: relative;
     z-index: 3;
     margin-bottom: 40px;
+    overflow: none;
 
 }
 

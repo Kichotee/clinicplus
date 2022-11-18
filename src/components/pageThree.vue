@@ -92,7 +92,7 @@ export default {
         const featureBeforeEnter = (el) => {
 
             el.style.opacity = 0
-            el.style.transform = 'translateY(-50px) rotate(90deg)'
+            
         }
         const featureEnter = (el, done) => {
             let media = window.matchMedia(("max-width:468px"))
@@ -106,16 +106,15 @@ export default {
                 el, {
                     scrollTrigger: {
                         target: el,
-                        toggleActions: "play reverse play none ",
+                        toggleActions: "restart pause resume none",
                         scrub: false,
-                        start: "40% 50%",
+                        start: "40% 90%",
                         end: "55% 90%",
                         // markers:true
 
                     },
                     duration: 10,
-                    x: 0,
-                    rotation: 0,
+                   
                     opacity: 1,
                     ease: 'elastic',
                     onComplete: done,
@@ -127,10 +126,10 @@ export default {
                 el, {
                     scrollTrigger: {
                         target: el,
-                        toggleActions: "play reverse play none ",
-                        start: "39% 50%",
+                        toggleActions: "restart pause resume none ",
+                        start: "29% 50%",
                         end: "52% 75%",
-                        // markers:true
+                        markers:true
 
 
                     },
