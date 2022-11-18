@@ -139,6 +139,7 @@ export default {
     /* height: 100vh; */
     overflow: none;
     position: relative;
+    z-index: 100;
 
 }
 
@@ -156,7 +157,7 @@ h4 {
 .card-box {
     display: flex;
     flex-direction: row;
-    z-index: 2;
+    
     gap: 42px;
     /* width: calc(244*4px); */
     overflow-x: scroll;
@@ -245,6 +246,7 @@ span .green-circle {
     position: absolute;
     right: -305px;
     top: 45px;
+    z-index: 2;
 
 }
 
@@ -257,6 +259,7 @@ span .white-circle {
     right: -395px;
     top: 120px;
     border: 2px solid #04514C;
+    z-index: 2;
 
 }
 
