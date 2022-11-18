@@ -3,7 +3,7 @@
     <h4>Why use Clinic Plus?</h4>
     <p>Click on the video below to find out more</p>
     <div class="vid-boilerplate">
-
+        <i class="fa-solid fa-play"></i>
     </div>
     <div class="box">
         <p>We can be your trusted healthcare provider at any day  and time</p>
@@ -40,7 +40,15 @@ export default {
     height: 16.265rem;
     background: #121212;
     margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+
+
+}
+i{
+    color: white;
 }
 
 .video-testimonials .box {
@@ -81,6 +89,8 @@ export default {
         height: auto;
         margin: 0 auto;
         padding: 0;
+    text-align: center;
+
         
     }
 
@@ -106,10 +116,11 @@ export default {
         width: 40%;
         margin: 0;
         padding: 0;
+        text-align: left;
     } 
     .video-testimonials button{
         width: 42%;
-        font-size: 1rem;
+        font-size: 0.8rem;
          flex-grow: 1.5;
         height: 1.9rem;
         line-height: 16px;

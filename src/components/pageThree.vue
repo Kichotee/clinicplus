@@ -129,7 +129,7 @@ export default {
                         toggleActions: "restart pause resume none ",
                         start: "29% 50%",
                         end: "52% 75%",
-                        markers:true
+                        // markers:true
 
 
                     },
@@ -180,6 +180,8 @@ export default {
 <style scoped>
 .book-appointments {
     position: relative;
+    z-index: 99;
+
 }
 
 h4 {
@@ -190,7 +192,6 @@ h4 {
     line-height: 60px;
     letter-spacing: 0em;
     text-align: left;
-    z-index: 2;
 }
 
 .feature-card-box {
