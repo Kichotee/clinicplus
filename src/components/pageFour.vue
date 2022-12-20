@@ -79,7 +79,7 @@ section {
 .testimonials {
     width: 94%;
 
-    height: max-content !important;
+    height: 70% !important;
     margin: 0 40px 1rem 0;
     padding-bottom: 0.5rem;
     box-shadow: 0px 4px 4px 0px #00000040;
@@ -127,7 +127,7 @@ hr {
     width: 1px;
     height: 100%;
     background: green;
-    z-index: ;
+    
 }
 
 .ds-circle {

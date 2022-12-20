@@ -1,5 +1,5 @@
-<template>
-<div class="home">
+<template  >
+<div  @click.self="toggleMenu"  class="home">
 
     <nav v-if="![`LoginForm`, `Signup`,`dashboard`].includes($route.name)">
 
@@ -28,8 +28,8 @@
         </div>
     </nav>
 
-    <div v-if="activeMenu && ![`LoginForm`, `Signup`,`dashboard`].includes($route.name)" class="navlinks-mobile">
-        <ul>
+    <div  v-if="activeMenu && ![`LoginForm`, `Signup`,`dashboard`].includes($route.name)" class="navlinks-mobile">
+        <ul >
             <li v-for="item in navElements">
                 <p>{{item.element}}</p>
             </li>

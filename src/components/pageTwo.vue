@@ -139,7 +139,7 @@ export default {
     /* height: 100vh; */
     overflow: none;
     position: relative;
-    z-index: 100;
+  
 
 }
 
@@ -179,6 +179,12 @@ h4 {
     border-radius: 30px;
     position: relative;
     margin-bottom: 3rem;
+    z-index:10;
+    transition: scale 0.5s ease-in-out;
+    cursor: pointer;
+}
+.slide-card:hover{
+    scale: 1.25;
 }
 
 .slide-card .card-text {
@@ -218,9 +224,7 @@ h4 {
     display: none;
 }
 
-.slide-card .card-button button i {
-    font-size: ;
-}
+
 
 .slideshow .slide-card img {
     width: 244px;

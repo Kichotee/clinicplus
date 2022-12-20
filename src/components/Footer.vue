@@ -1,8 +1,8 @@
 <template>
 <footer>
     <div class="footer-box">
-        <div class="box-1">
-            <img src="../assets/clinicplus/clinicPlusBottom.png" alt="">
+        <img src="../assets/clinicplus/clinicPlusBottom.png" alt="">
+        <div class="box box-1">
             <div class="text">
                 Clinic Plus is the most trusted
                  and efficient way of getting proper
@@ -10,8 +10,8 @@
             </div>
 
         </div>
-            <div class="box-2">
-                <header>Products</header>
+        <header class="Products">Products</header>
+            <div class="box box-2">
                 <ul>
                     <li>
                         Home
@@ -27,8 +27,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="box-3">
-                <header>Services</header>
+            <header class="Services">Services</header>
+            <div class="box box-3">
                 <ul>
                     <li>
                         Appointment
@@ -69,61 +69,63 @@ footer {
     font-size: 16px;
 
 }
-.footer-box {
-    height: 100%;
-
-    padding: 1rem 137px;
+.footer-box{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr ;
-   
-    color: #fff;
-}
-
-.footer-box img {
-    width: 100px;
-
-}
-
-.box-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    grid-template-rows: 1fr 3fr ;
     text-align: left;
-}
- .box-2, .box-3{
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    text-align: left;
- }
-
-.box-2 ul , .box-3 ul{
-    height: 160px;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
     
+}
+.footer-box > *{
+    height: 80%;
+    /* border: solid; */
+}
+img{
+    grid-column: 1;
+    grid-row: 1;
+}
+.Products{
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+
+    text-align: center;
+}
+
+.Services{
+    grid-column: 3;
+    grid-row: 1;
+    width: 100%;
+    text-align: center;
+}
+.box{
+    display: flex;
+    width: 100%;
+    align-content: center;
+    font-size: 1rem;
+}
+li{
+    font-size: 1rem;
+    
+}
+.box-1{
+    grid-column: 1;
+    grid-row: 2;
+    width: 60%;
 
 }
-.text{
-line-height: 25px;
-width: 70%;
-word-spacing: 5px;
-/* justify-self: center; */
+.box-2{
+    grid-column: 2;
+    grid-row: 2;
 }
-header{
-  color:#121212 ;
-  font-weight: 600;
-  justify-self: end;
-  font-size: 20px;
-  margin-top: 3rem;
+.box-3{
+    grid-column: 3;
+    grid-row: 2;
 }
-.box-2 ul>*, .box-3 ul>*{
-  margin-bottom: 5px;
-}
+
 @media screen and (max-width:486px) {
     .text ,ul li{
-    font-size:1rem}
+    font-size:0.8rem}
 }
 .footer-box {
     height: 100%;
